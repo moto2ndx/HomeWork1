@@ -4,21 +4,29 @@ public class Task1_1 {
 
     public static void main(String[] args) {
 
-        TwoWords twoWords1 = new TwoWords();
-        twoWords1.name = "gnirts esreveR";
-        twoWords1.reverse();
+        String string = "eulaVgnirtS";
+
+        String s = reverseString(string);
+
+        System.out.println(s);
+
     }
-}
 
-class TwoWords {
-    String name;
+    public static String reverseString(String string) {
 
-    void reverse() {
-        char[] chars = name.toCharArray();
-        for (int i = chars.length-1; i >= 0; i--) {
+        char[] chars = string.toCharArray();
 
-            System.out.print(chars[i]);
+        char[] finalChars = new char[chars.length];
+
+        int counter = 0;
+        for (int i = chars.length - 1; i >= 0; i--) {
+
+            finalChars[counter] = chars[i];
+            counter++;
         }
 
+        return String.valueOf(finalChars);
     }
 }
+
+
